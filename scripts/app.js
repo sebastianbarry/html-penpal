@@ -64,8 +64,11 @@ messageBox.addEventListener('input', function (event) {
 });
 
 document.addEventListener('keydown', function (event) {
-  if (event.key === 'Enter') {
+  if (event.key === 'Enter' && firstKeyPress === false) {
     send();
+  }
+  else if (event.key === 'Enter' && firstKeyPress === true) {
+    reply();
   }
 });
 
